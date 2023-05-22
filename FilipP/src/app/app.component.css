@@ -1,0 +1,22 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.image-container {
+  height: 100vh; /* Set container height to fill the viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  scroll-snap-type: y mandatory; /* Enable scroll snapping */
+  overflow-y: scroll;
+}
+
+.image-container img,p {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  scroll-snap-align: start; /* Enable snapping to each image */
+}
