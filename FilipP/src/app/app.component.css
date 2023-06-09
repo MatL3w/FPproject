@@ -1,35 +1,31 @@
-body, html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
+#montazKlimatyzacji,#serwis{
+color: white;
+text-shadow: 0 0 15px #000000;
+font-size: 40px;
 }
-img {
-  width: 300px;
-  height: 200px;
+#main{
+  background-image: url('../assets/klima2.jpg');
+  width: 1500px;
+  height: 500px;
 }
-p{
-  color: #0077b6;
+#montazKlimatyzacji{
+  margin-top: 100px;
+  margin-bottom: 100px
 }
-/* .image-container {
-  height: 100vh;
-  flex-direction: column;
-  justify-content: space-between;
-  scroll-snap-type: y mandatory;
+.nav-link{
+color: white;
+text-shadow: 0 0 3px #000000;
 }
-
-.image-container img,p {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  scroll-snap-align: start;
-  transition: bottom 1.5s ease;
+.nav-link:hover{
+  color: black;
 }
-.image-container:hover img {
-  bottom: 0;
+.navbar-brand{
+color: white;
+text-shadow: 0 0 3px #000000;
 }
-.container {
-  background-image: url('klima.jpg');
-  background-size: cover;
-  background-position: center;
-} */
+.offer-block{
+  margin: 10px;
+  border: 1px solid black;
+  width: 300px; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
+}
