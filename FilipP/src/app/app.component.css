@@ -4,20 +4,30 @@ body, html {
   padding: 0;
   scroll-behavior: smooth;
 }
+img {
+  width: 300px;
+  height: 200px;
+}
 
-.image-container {
-  height: 100vh; /* Set container height to fill the viewport */
-  display: flex;
-  /* margin-top: 100px; */
+/* .image-container {
+  height: 100vh;
   flex-direction: column;
   justify-content: space-between;
-  scroll-snap-type: y mandatory; /* Enable scroll snapping */
-  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 .image-container img,p {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  scroll-snap-align: start; /* Enable snapping to each image */
+  scroll-snap-align: start;
+  transition: bottom 1.5s ease;
 }
+.image-container:hover img {
+  bottom: 0;
+}
+.container {
+  background-image: url('klima.jpg');
+  background-size: cover;
+  background-position: center;
+} */

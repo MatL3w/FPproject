@@ -1,7 +1,7 @@
-<nav class="navbar">
+<nav class="navbar" [ngClass]="{'fixed': isFixed}" (window:scroll)="onScroll()">
   <ul>
-    <li><a href="#1">About</a></li>
-    <li><a href="#2">Services</a></li>
-    <li><a href="#3">Contact</a></li>
+    <li><a href="#1">STRONA GŁÓWNA</a></li>
+    <li><a href="#2">OFERTA</a></li>
+    <li><a href="#3">KONTAKT</a></li>
   </ul>
 </nav>
