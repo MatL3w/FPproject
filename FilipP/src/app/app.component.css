@@ -1,6 +1,11 @@
-#montazKlimatyzacji,#serwis,#oferta{
+#montazKlimatyzacji,#serwis{
 color: white;
-text-shadow: 0 0 15px blue;
+text-shadow: 0 0 15px #009bd6;
+font-size: 40px;
+}
+#oferta{
+color: #009bd6;
+text-shadow: 0 0 2px #009bd6;
 font-size: 40px;
 }
 #main{
@@ -14,28 +19,51 @@ font-size: 40px;
 }
 .nav-link{
 color: white;
-text-shadow: 0 0 3px blue;
+text-shadow: 0 0 3px #009bd6;
 }
 .nav-link:hover{
-  color: blue;
+  color: #009bd6;
 }
 .navbar-brand{
 color: white;
-text-shadow: 0 0 3px blue;
+text-shadow: 0 0 3px #009bd6;
 }
-.offer-block{
+/* p.offer-block{
+  color: black;;
   margin: 10px;
-  border: 1px solid blue;
-  width: 300px; /* Adjust width as needed */
-  height: 200px; /* Adjust height as needed */
-}
+  border: 1px solid #009bd6;
+  width: 300px;
+  height: 200px;
+} */
 .logo{
-  border: 1px solid blue;
+  border: 1px solid #009bd6;
   margin-top: 100px;
   margin-bottom: 100px;
-  background-color: blue;
+  background-color: #009bd6;
   color: white;
 }
 .down-site{
-  background-color: blue;
+  background-color: #009bd6;
+}
+.logo-o-firmie{
+  border: 1px solid #009bd6;
+  font-size: 11px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px;
+  background-color: #009bd6;
+  color: white;
+}
+.logo-kontakt{
+  border: 1px solid #009bd6;
+  font-size: 14px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 200px;
+  background-color: #009bd6;
+  color: white;
 }
