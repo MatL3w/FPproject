@@ -1,6 +1,6 @@
-#montazKlimatyzacji,#serwis{
+#montazKlimatyzacji,#serwis,#oferta{
 color: white;
-text-shadow: 0 0 15px #000000;
+text-shadow: 0 0 15px blue;
 font-size: 40px;
 }
 #main{
@@ -14,18 +14,28 @@ font-size: 40px;
 }
 .nav-link{
 color: white;
-text-shadow: 0 0 3px #000000;
+text-shadow: 0 0 3px blue;
 }
 .nav-link:hover{
-  color: black;
+  color: blue;
 }
 .navbar-brand{
 color: white;
-text-shadow: 0 0 3px #000000;
+text-shadow: 0 0 3px blue;
 }
 .offer-block{
   margin: 10px;
-  border: 1px solid black;
+  border: 1px solid blue;
   width: 300px; /* Adjust width as needed */
   height: 200px; /* Adjust height as needed */
+}
+.logo{
+  border: 1px solid blue;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  background-color: blue;
+  color: white;
+}
+.down-site{
+  background-color: blue;
 }
