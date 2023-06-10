@@ -36,6 +36,9 @@ margin: 40px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.no-underline {
+  text-decoration: none;
+}
 .image-container{
   display: flex;
   justify-content: center;
