@@ -1,7 +1,36 @@
-<nav class="navbar" [ngClass]="{'fixed': isFixed}" (window:scroll)="onScroll()">
-  <ul>
-    <li><a href="#1">STRONA GŁÓWNA</a></li>
-    <li><a href="#2">OFERTA</a></li>
-    <li><a href="#3">KONTAKT</a></li>
-  </ul>
-</nav>
+<div class="container-fluid h-100 w-100" id="main">
+  <nav class="w-100 navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="#">FP KLIMA</a>
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="isNavbarExpanded ? 'true' : 'false'"
+      aria-controls="navbarNav" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [ngClass]="{ 'show': isNavbarExpanded }">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#oferta"><b>OFERTA</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#kontakt"><b>KONTAKT</b></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <a href="tel:+48 724 796 481">
+    <img  src="../assets/telephone.png" id="NavBarphoneIcon" >
+  </a>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12" id="montazKlimatyzacji">
+        <h1 class="text-start">MONTAŻ KLIMATYZACJI</h1>
+      </div>
+      <div class="col-xl-12" id="serwis">
+        <p class="text-start">SERWIS</p>
+      </div>
+      <div class="col-xl-12">
+      </div>
+    </div>
+  </div>
+</div>

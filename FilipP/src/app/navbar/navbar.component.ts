@@ -6,14 +6,8 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  isFixed: boolean = false;
-  scrollDistance: number = 20;
-  @HostListener('window:scroll')
-  onScroll() {
-    if (window.pageYOffset > this.scrollDistance) {
-      this.isFixed = true;
-    } else {
-      this.isFixed = false;
-    }
+  isNavbarExpanded: boolean = false;
+  toggleNavbar() {
+    this.isNavbarExpanded = !this.isNavbarExpanded;
   }
 }

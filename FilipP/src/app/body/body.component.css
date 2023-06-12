@@ -1,0 +1,29 @@
+no-underline {
+  text-decoration: none;
+}
+.image-container{
+  display: flex;
+  justify-content: center;
+}
+.kontakt-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.kontakt-paragraph{
+  margin-bottom: 40px;
+}
+#phoneIcon,#mailIcon,#facebookIcon,#instagramIcon{
+  max-width: 60px;
+  max-height: 60px;
+  margin-left: 55px;
+  margin-right: 55px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#oferta,#kontakt{
+color: #009bd6;
+text-shadow: 0 0 2px #009bd6;
+font-size: 40px;
+margin: 40px;
+}

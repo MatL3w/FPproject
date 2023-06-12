@@ -1,39 +1,39 @@
-.navbar {
-  top: 0;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  background-color: #0077b6;
-  padding: 10px;
-  font-weight: bold;
+#montazKlimatyzacji,#serwis{
+color: white;
+text-shadow: 0 0 15px #009bd6;
+font-size: 40px;
+}
+#main{
+  background-image: url('../../assets/klima3.jpg');
+  background-size: cover; /* Adjust the background image size */
+  background-repeat: no-repeat;
+  width: 1500px;
+  height: 500px;
+}
+#montazKlimatyzacji{
+  margin-top: 100px;
+  margin-bottom: 100px
+}
+#NavBarphoneIcon{
+  max-width: 40px;
+  max-height: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.nav-link{
+color: white;
+text-shadow: 0 0 3px #009bd6;
+}
+.nav-link:hover{
+  color: #009bd6;
+}
+.navbar-brand{
+color: #009bd6;
+text-shadow: 0 0 3px #009bd6;
 }
 
-.navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.navbar li a {
-  text-decoration: none;
-  color: #fff;
-  padding: 5px 10px;
-}
-
-.navbar li a:hover {
-  color: #000000;
-}
-
-
-.fixed {
-  position: fixed;
-  /* Styles for the fixed position */
-}
 
 
 
