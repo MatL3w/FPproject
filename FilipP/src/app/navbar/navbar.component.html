@@ -8,14 +8,14 @@
     </button>
     <div class="collapse navbar-collapse" [ngClass]="{ 'show': isNavbarExpanded }">
       <ul class="navbar-nav">
-        <li class="nav-item" >
-          <a class="nav-link" href="#oferta" (click)="redirectToMain()"><b>OFERTA</b></a>
+        <li class="nav-item" (click)="redirectToMain()">
+          <a class="nav-link" href="#oferta"><b>OFERTA</b></a>
         </li>
-        <li class="nav-item" >
-          <a class="nav-link" href="#kontakt" (click)="redirectToMain()"><b>KONTAKT</b></a>
+        <li class="nav-item" (click)="redirectToMain()">
+          <a class="nav-link" href="#kontakt"><b>KONTAKT</b></a>
         </li>
-        <li class="nav-item" >
-          <p class="nav-link" href="#kontakt" (click)="redirectToCatalogs()"><b>KATALOGI</b></p>
+        <li class="nav-item" (click)="redirectToCatalogs()">
+          <a class="nav-link"><b>KATALOGI</b></a>
         </li>
       </ul>
     </div>

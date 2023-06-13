@@ -46,3 +46,9 @@
   display: inline-block;
   margin: 0 auto;
 }
+.movement {
+  transition: transform 0.3s ease;
+}
+.movement:hover{
+  transform: scale(1.1);
+}

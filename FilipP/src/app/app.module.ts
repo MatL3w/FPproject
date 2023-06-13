@@ -10,8 +10,8 @@ import { RouterModule,Routes } from '@angular/router';
 import { CatalogsComponent } from './catalogs/catalogs.component';
 
 const appRoutes: Routes = [
-  { path: '/', component: BodyComponent },
-  { path: '/katalogi', component: CatalogsComponent},
+  { path: '', component: BodyComponent },
+  { path: 'katalogi', component: CatalogsComponent},
   { path: '**', redirectTo: '/' },
 ];
 @NgModule({
@@ -20,12 +20,10 @@ const appRoutes: Routes = [
     NavbarComponent,
     BodyComponent,
     BottomComponent,
-    CatalogsComponent
+    CatalogsComponent,
   ],
-  imports: [
-    BrowserModule,
-  ],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
