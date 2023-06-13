@@ -7,11 +7,10 @@ margin: 40px;
 }
 
 .modall {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70%;
   background-color: white;
   padding: 6rem;
   border-radius: 5px;
@@ -42,6 +41,11 @@ margin: 40px;
   /* border: solid 5px #009bd6;; */
 }
 
+.animation{
+  animation: slide-out 1s forwards;
+}
+
+
 @keyframes slide-out {
   0% {
     opacity: 0;
@@ -51,4 +55,14 @@ margin: 40px;
     opacity: 1;
     transform: translateY(0);
   }
+}
+#imageForModal{
+  max-width: 600px;
+  max-height: 600px;
+}
+.movement {
+  transition: transform 0.3s ease;
+}
+.movement:hover{
+  transform: scale(1.1);
 }

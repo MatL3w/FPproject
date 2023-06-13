@@ -2,12 +2,12 @@
   <p class="text-center" id="realizacje">REALIZACJE</p>
 </div>
 <div class="row">
-    <div *ngFor="let image of images"  class="col-lg-3 animation ">
-        <img class="image-for-modal" src='{{image}}' alt="" id="facebookIcon">
+    <div *ngFor="let image of images"  class="col-md-3 movement animation ">
+        <img class="image-for-modal movement" src='{{image}}' alt="" id="facebookIcon" >
     </div>
 </div>
 
   <div id ='modal' class="modall" [style.display]="modalIsVisible">
-    <img id="imageForModal">
+    <img id="imageForModal" [src]="pathToImage">
   </div>
 <div class="overlay hidden"></div>

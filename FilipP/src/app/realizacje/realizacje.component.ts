@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 declare var bootstrap: any;
 @Component({
   selector: 'app-realizacje',
@@ -6,12 +6,39 @@ declare var bootstrap: any;
   styleUrls: ['./realizacje.component.css'],
 })
 export class RealizacjeComponent {
+  @HostListener('window:click', ['$event'])
+  onWindowClick(event: MouseEvent) {
+    if (
+      (event.target as HTMLElement).tagName == 'IMG' &&
+      (event.target as HTMLElement).id != "NavBarphoneIcon"
+    ) {
+        if(this.modalIsVisible==='none'){
+            this.modalIsVisible = 'block';
+        }
+        else{
+          this.modalIsVisible = 'none';
+        }
+      this.pathToImage = (event.target as HTMLImageElement).src;
+      console.log((event.target as HTMLImageElement).src);
+      console.log((event.target as HTMLElement).id);
+    } else {
+      this.modalIsVisible = 'none';
+    }
+  }
+  pathToImage: string = '';
   images: string[] = [
     '../../assets/realizacje/realizacje1.jpeg',
     '../../assets/realizacje/realizacje2.jpeg',
     '../../assets/realizacje/realizacje3.jpeg',
     '../../assets/realizacje/realizacje4.jpeg',
+    '../../assets/realizacje/realizacje5.jpeg',
     '../../assets/realizacje/realizacje6.jpeg',
+    '../../assets/realizacje/realizacje7.jpeg',
+    '../../assets/realizacje/realizacje8.jpeg',
+    '../../assets/realizacje/realizacje9.jpeg',
+    '../../assets/realizacje/realizacje10.jpeg',
+    '../../assets/realizacje/realizacje11.jpeg',
+    '../../assets/realizacje/realizacje12.jpeg',
   ];
-  modalIsVisible:boolean =true;
+  modalIsVisible: string = 'none';
 }

@@ -21,6 +21,7 @@ margin: 40px;
 }
 .movement:hover{
   transform: scale(1.1);
+  cursor: pointer;
 }
 .logo-price-list{
   font-size: 30px;
@@ -30,7 +31,7 @@ margin: 40px;
   text-decoration: none;
 }
 .animation{
-  animation: slide-out 1s forwards;
+  animation: slide-out 2s forwards;
 }
 
 
