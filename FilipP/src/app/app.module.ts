@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BodyComponent } from './body/body.component';
 import { BottomComponent } from './bottom/bottom.component';
-import { Routes } from '@angular/router';
+import { RouterModule,Routes } from '@angular/router';
+import { CatalogsComponent } from './catalogs/catalogs.component';
 
 const appRoutes: Routes = [
   { path: '/', component: BodyComponent },
+  { path: '/katalogi', component: CatalogsComponent},
   { path: '**', redirectTo: '/' },
 ];
 @NgModule({
@@ -17,7 +19,8 @@ const appRoutes: Routes = [
     AppComponent,
     NavbarComponent,
     BodyComponent,
-    BottomComponent
+    BottomComponent,
+    CatalogsComponent
   ],
   imports: [
     BrowserModule,

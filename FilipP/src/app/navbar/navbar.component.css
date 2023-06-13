@@ -2,6 +2,7 @@
 color: white;
 text-shadow: 0 0 15px #009bd6;
 font-size: 40px;
+animation: slide-out 1s forwards;
 }
 #main{
   background-image: url('../../assets/klima3.jpg');
@@ -12,7 +13,8 @@ font-size: 40px;
 }
 #montazKlimatyzacji{
   margin-top: 100px;
-  margin-bottom: 100px
+  margin-bottom: 100px;
+  animation: slide-out 1s forwards;
 }
 #NavBarphoneIcon{
   max-width: 40px;
@@ -21,6 +23,7 @@ font-size: 40px;
   margin-right: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
+  animation: slide-out 1s forwards;
 }
 .nav-link{
 color: white;
@@ -28,6 +31,7 @@ text-shadow: 0 0 3px #009bd6;
 }
 .nav-link:hover{
   color: #009bd6;
+  cursor: pointer;
 }
 .navbar-brand{
 color: #009bd6;
@@ -35,5 +39,14 @@ text-shadow: 0 0 3px #009bd6;
 }
 
 
-
+@keyframes slide-out {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
