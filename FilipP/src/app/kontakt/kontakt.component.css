@@ -1,0 +1,36 @@
+.kontakt-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.kontakt-paragraph{
+  margin-bottom: 40px;
+}
+#phoneIcon,#mailIcon{
+  max-width: 60px;
+  max-height: 60px;
+  margin-left: 55px;
+  margin-right: 55px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#kontakt{
+color: #009bd6;
+text-shadow: 0 0 2px #009bd6;
+font-size: 40px;
+margin: 40px;
+}
+.animation{
+  animation: slide-out 1s forwards;
+}
+
+@keyframes slide-out {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

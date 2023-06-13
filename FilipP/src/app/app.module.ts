@@ -8,10 +8,12 @@ import { BodyComponent } from './body/body.component';
 import { BottomComponent } from './bottom/bottom.component';
 import { RouterModule,Routes } from '@angular/router';
 import { CatalogsComponent } from './catalogs/catalogs.component';
+import { KontaktComponent } from './kontakt/kontakt.component';
 
 const appRoutes: Routes = [
   { path: '', component: BodyComponent },
-  { path: 'katalogi', component: CatalogsComponent},
+  { path: 'kontakt', component: KontaktComponent },
+  { path: 'katalogi', component: CatalogsComponent },
   { path: '**', redirectTo: '/' },
 ];
 @NgModule({
@@ -21,6 +23,7 @@ const appRoutes: Routes = [
     BodyComponent,
     BottomComponent,
     CatalogsComponent,
+    KontaktComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
   providers: [],

@@ -1,5 +1,12 @@
+#katalogi{
+color: #009bd6;
+text-shadow: 0 0 2px #009bd6;
+font-size: 40px;
+margin: 40px;
+}
+
 .logo-container{
-   text-align: center
+   text-align: center;
 }
 .logo-container img{
   display: inline-block;
@@ -21,4 +28,19 @@
 }
 .no-decoration{
   text-decoration: none;
+}
+.animation{
+  animation: slide-out 1s forwards;
+}
+
+
+@keyframes slide-out {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

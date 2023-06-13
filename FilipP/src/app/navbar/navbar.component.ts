@@ -8,17 +8,17 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
   isNavbarExpanded: boolean = false;
-  constructor(private router:Router){
-
-  }
+  constructor(private router: Router) {}
   toggleNavbar() {
     this.isNavbarExpanded = !this.isNavbarExpanded;
   }
-  redirectToMain(){
+  redirectToMain() {
     this.router.navigate(['/']);
   }
-  redirectToCatalogs(){
+  redirectToContact() {
+    this.router.navigate(['/kontakt']);
+  }
+  redirectToCatalogs() {
     this.router.navigate(['/katalogi']);
-    console.log('lol');
   }
 }

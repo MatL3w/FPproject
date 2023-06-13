@@ -26,9 +26,10 @@ color: #009bd6;
 text-shadow: 0 0 2px #009bd6;
 font-size: 40px;
 margin: 40px;
-animation: slide-out 2s forwards;
 }
-
+.animation{
+  animation: slide-out 1s forwards;
+}
 
 @keyframes slide-out {
   0% {
