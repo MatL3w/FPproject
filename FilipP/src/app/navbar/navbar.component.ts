@@ -21,4 +21,7 @@ export class NavbarComponent {
   redirectToCatalogs() {
     this.router.navigate(['/katalogi']);
   }
+  redirectToCRealizacje() {
+    this.router.navigate(['/realizacje']);
+  }
 }

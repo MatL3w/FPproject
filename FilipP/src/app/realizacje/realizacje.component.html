@@ -1,0 +1,13 @@
+<div class="container">
+  <p class="text-center" id="realizacje">REALIZACJE</p>
+</div>
+<div class="row">
+    <div *ngFor="let image of images"  class="col-lg-3 animation ">
+        <img class="image-for-modal" src='{{image}}' alt="" id="facebookIcon">
+    </div>
+</div>
+
+  <div id ='modal' class="modall" [style.display]="modalIsVisible">
+    <img id="imageForModal">
+  </div>
+<div class="overlay hidden"></div>

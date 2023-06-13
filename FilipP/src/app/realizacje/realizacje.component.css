@@ -1,0 +1,54 @@
+
+#realizacje{
+color: #009bd6;
+text-shadow: 0 0 2px #009bd6;
+font-size: 40px;
+margin: 40px;
+}
+
+.modall {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.show-modal {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.75rem 3.5rem;
+  margin: 5rem 2rem;
+  border: none;
+  background-color: #fff;
+  color: #444;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+.hidden{
+  display: none;
+}
+.animation{
+  animation: slide-out 1s forwards;
+}
+.image-for-modal{
+  max-width: 300px;
+  max-height: 400px;
+  margin: 20px;
+  /* border: solid 5px #009bd6;; */
+}
+
+@keyframes slide-out {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
