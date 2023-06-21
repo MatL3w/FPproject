@@ -7,7 +7,7 @@
     </div>
 </div>
 
-  <div id ='modal' class="modall" [style.display]="modalIsVisible">
+<div id ='modal' class="modall" [style.display]="modalIsVisible">
     <img id="imageForModal" [src]="pathToImage">
   </div>
-<div class="overlay hidden"></div>
+<div class="blurry-background" [style.display]="modalIsVisible"></div>

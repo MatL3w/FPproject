@@ -23,3 +23,12 @@
     </div>
   </div>
 </div>
+
+<div class="modalll animation" [style.display]="modalIsVisible">
+  <button class="close-modal-button" (click)="closeModal()" >&times;</button>
+  <p class="text-in-modal">UWAGA!</p>
+  <p class="text-in-modal">UMÓW SIĘ JUŻ DZISIAJ NA  </p>
+  <p class="text-in-modal-wycena">BEZPŁATNĄ WYCENĘ </p>
+  <button class="button-in-modal" (click)="redirectToContact()">KONTAKT</button>
+</div>
+<div class="blurry-background" [style.display]="modalIsVisible"></div>

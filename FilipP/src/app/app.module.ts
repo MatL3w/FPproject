@@ -10,6 +10,7 @@ import { RouterModule,Routes } from '@angular/router';
 import { CatalogsComponent } from './catalogs/catalogs.component';
 import { KontaktComponent } from './kontakt/kontakt.component';
 import { RealizacjeComponent } from './realizacje/realizacje.component';
+import { Util } from './util.service';
 
 const appRoutes: Routes = [
   { path: '', component: BodyComponent },
@@ -29,7 +30,7 @@ const appRoutes: Routes = [
     RealizacjeComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
-  providers: [],
+  providers: [Util],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -28,7 +28,7 @@ font-size: 40px;
 margin: 40px;
 }
 .animation{
-  animation: slide-out 1s forwards;
+  animation: slide-out 2s forwards;
 }
 
 @keyframes slide-out {
@@ -38,6 +38,61 @@ margin: 40px;
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
   }
+}
+.modalll {
+  position: fixed;
+  border: #009bd6;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.text-in-modal{
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+.text-in-modal-wycena{
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: #009bd6;
+}
+.button-in-modal{
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #009bd6;
+  border: #009bd6;
+
+}
+.button-in-modal:hover{
+  color: #113645;
+  cursor: pointer;
+  text-shadow: 0 0 3px white;
+}
+.close-modal-button{
+  position: absolute;
+  top: 0rem;
+  right: 1rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.blurry-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  z-index: 3;
 }
