@@ -12,6 +12,7 @@ import { KontaktComponent } from './kontakt/kontakt.component';
 import { RealizacjeComponent } from './realizacje/realizacje.component';
 import { Util } from './util.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: '', component: BodyComponent },
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [Util],
   bootstrap: [AppComponent],

@@ -49,12 +49,12 @@
         <div class="row d-flex justify-content-center align-items-center">
           <div class = 'col d-flex justify-content-center align-items-center m-4 '>
             <label for="files">ZAŁĄCZNIK:</label>
-            <input type="file"  formControlName="files" multiple/>
+            <input type="file"  name='files' formControlName="files" multiple  (change)="onFileSelected($event)" />
           </div>
         </div>
         <div class="row d-flex justify-content-center align-items-center">
           <div class = 'col d-flex justify-content-center align-items-center m-4 '>
-            <button class="form-button-send" (ngSubmit)="submitForm">WYŚLIJ</button>
+            <button class="form-button-send" (ngSubmit)="submitForm" >WYŚLIJ</button>
           </div>
         </div>
       </div>

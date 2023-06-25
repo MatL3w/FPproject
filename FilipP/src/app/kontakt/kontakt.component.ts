@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -8,35 +10,47 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./kontakt.component.css'],
 })
 export class KontaktComponent {
-  emailForm: FormGroup ;
-  emailFormErrorDescription: string ='';
-  formIsValid: boolean=false;
-  constructor(private formBuilder: FormBuilder) {
+  emailForm!: FormGroup;
+  emailFormValueChangesSubscription!: Subscription;
+  emailFormErrorDescription: string = '';
+  emailFormIsSending = false;
+  formData: FormData = new FormData();
+
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     this.emailForm = this.formBuilder.group({
       name: [''],
       email: ['', [Validators.required, Validators.email]],
-      content: ['', [Validators.required,Validators.maxLength(1000)]],
-      files: ['',],
+      content: ['', [Validators.required, Validators.maxLength(1000)]],
+      files: [''],
     });
-    // this.emailForm.valueChanges.subscribe(value=>{
-
-    // })
   }
+
   ngOnInit() {
+    this.emailFormValueChangesSubscription =
+      this.emailForm.valueChanges.subscribe((value) => {});
+  }
+  ngOnDestroy() {
+    this.emailFormValueChangesSubscription.unsubscribe();
   }
 
   submitForm() {
-    if(this.checkValidatorsForEmailForm())return;
-
+    if (this.checkValidatorsForEmailForm()) return;
+    this.formData.append('data', JSON.stringify(this.emailForm.value));
+    this.http.post('http://localhost:3000/email', this.formData).subscribe(
+      (response) => {
+        console.log('File uploaded successfully:', response);
+      },
+      (error) => {
+        console.error('Error uploading file:', error);
+      }
+    );
   }
-  private checkValidatorsForEmailForm(){
+  private checkValidatorsForEmailForm() {
     if (this.emailForm.valid) {
-      console.log('valid', this.emailForm.valid);
       this.emailFormErrorDescription = '';
       return false;
     }
     if (this.emailForm.get('email')?.errors) {
-      console.log(this.emailForm.get('email')?.errors);
       this.emailFormErrorDescription = 'Proszę podać prawdiłowy adres email';
       return false;
     }
@@ -47,11 +61,36 @@ export class KontaktComponent {
       }
       if (this.emailForm.get('content')?.errors?.['maxlength']) {
         this.emailFormErrorDescription =
-          'Wiadomośc jest za długa proszę uzyć mniej niż 1000 znaków';
-        console.log(this.emailForm.get('content')?.errors);
+          'Wiadomośc jest za długa proszę użyć mniej niż 1000 znaków';
         return false;
       }
     }
     return true;
   }
+  onFileSelected(event: any) {
+    const files: FileList = event.target.files;
+    for(let fileNumber=0;fileNumber<files.length;fileNumber++){
+        console.log(files[fileNumber].name);
+       this.formData.append(files[fileNumber].name, files[fileNumber]);
+    }
+  }
+
+// convertFormGroupToFormData(formGroup: FormGroup): FormData {
+//   const formData = new FormData();
+
+//   Object.keys(formGroup.controls).forEach(key => {
+//     const control = formGroup.get(key);
+
+//     if (control instanceof FileList) {
+//       const fileList: FileList = control.value;
+//       for (let i = 0; i < fileList.length; i++) {
+//         formData.append(key, fileList[i]);
+//       }
+//     } else if (control instanceof File) {
+//       formData.append(key, control.value);
+//     }
+//   });
+//   return formData;
+// }
+
 }
