@@ -11,6 +11,7 @@ import { CatalogsComponent } from './catalogs/catalogs.component';
 import { KontaktComponent } from './kontakt/kontakt.component';
 import { RealizacjeComponent } from './realizacje/realizacje.component';
 import { Util } from './util.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', component: BodyComponent },
@@ -29,7 +30,11 @@ const appRoutes: Routes = [
     KontaktComponent,
     RealizacjeComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule,
+  ],
   providers: [Util],
   bootstrap: [AppComponent],
 })

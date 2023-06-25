@@ -14,7 +14,7 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
-#kontakt{
+#kontakt,#kontakt-formularz{
 color: #009bd6;
 text-shadow: 0 0 2px #009bd6;
 font-size: 40px;
@@ -33,4 +33,25 @@ margin: 40px;
     opacity: 1;
     transform: translateY(0);
   }
+}
+.form-element{
+  margin: 3rem;
+}
+label{
+color: #009bd6;
+text-shadow: 0 0 2px #009bd6;
+font-size: 20px;
+}
+.form-button-send{
+  border: none;
+background-color: #009bd6;
+color: white;
+text-shadow: 0 0 2px #009bd6;
+font-size: 40px;
+}
+.email-form-error{
+border: none;
+color: red;
+text-shadow: 0 0 2px red;
+font-size: 20px;
 }

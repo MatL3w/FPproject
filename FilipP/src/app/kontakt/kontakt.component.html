@@ -21,3 +21,41 @@
     </div>
   </div>
 </div>
+<hr>
+<div class="container ">
+  <p class="text-center" id="kontakt-formularz">FORMULARZ KONTAKTOWY</p>
+</div>
+<div class="container ">
+  <p *ngIf="emailFormErrorDescription" class="text-center email-form-error">{{ emailFormErrorDescription }}</p>
+</div>
+    <form class="animation" [formGroup]='emailForm' (ngSubmit)="submitForm()">
+      <div class="container">
+        <div class="row d-flex justify-content-center align-items-center ">
+          <div class = 'col-md-5 text-end m-4'>
+            <label for="name">IMIĘ:</label>
+            <input type="text" id="name"  formControlName="name" >
+          </div>
+          <div class = 'col-md-5 text-start m-4'>
+            <label for="email">EMAIL:</label>
+            <input type="text" id="email"  formControlName="email">
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class = 'col d-flex justify-content-center align-items-center m-4'>
+            <label for="content">TREŚĆ:</label>
+            <textarea formControlName="content" rows="4" cols="50"></textarea>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class = 'col d-flex justify-content-center align-items-center m-4 '>
+            <label for="files">ZAŁĄCZNIK:</label>
+            <input type="file"  formControlName="files" multiple/>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class = 'col d-flex justify-content-center align-items-center m-4 '>
+            <button class="form-button-send" (ngSubmit)="submitForm">WYŚLIJ</button>
+          </div>
+        </div>
+      </div>
+    </form>
