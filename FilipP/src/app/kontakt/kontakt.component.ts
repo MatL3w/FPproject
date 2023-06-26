@@ -49,7 +49,7 @@ export class KontaktComponent {
           this.sendingEmail = false;
         }
       );
-
+      return false;
   }
   private checkValidatorsForEmailForm() {
     if (this.emailForm.valid) {
