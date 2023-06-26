@@ -11,44 +11,50 @@ import { HttpClient } from '@angular/common/http';
 })
 export class KontaktComponent {
   emailForm!: FormGroup;
-  emailFormValueChangesSubscription!: Subscription;
   emailFormErrorDescription: string = '';
   emailFormIsSending = false;
+  fileListInputElement!:HTMLInputElement;
   formData: FormData = new FormData();
+  sendingEmail = false;
+  emailSended = false;
+  maxFilesize = 1024 * 1024 * 20;
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     this.emailForm = this.formBuilder.group({
       name: [''],
       email: ['', [Validators.required, Validators.email]],
       content: ['', [Validators.required, Validators.maxLength(1000)]],
-      files: [''],
     });
   }
-
   ngOnInit() {
-    this.emailFormValueChangesSubscription =
-      this.emailForm.valueChanges.subscribe((value) => {});
+    this.emailSended = false;
   }
   ngOnDestroy() {
-    this.emailFormValueChangesSubscription.unsubscribe();
   }
-
   submitForm() {
-    if (this.checkValidatorsForEmailForm()) return;
-    this.formData.append('data', JSON.stringify(this.emailForm.value));
-    this.http.post('http://localhost:3000/email', this.formData).subscribe(
-      (response) => {
-        console.log('File uploaded successfully:', response);
-      },
-      (error) => {
-        console.error('Error uploading file:', error);
-      }
-    );
+    this.mergeAllFormDataToOneForm();
+    if (!this.checkValidatorsForEmailForm())return;
+    this.sendingEmail = true;
+    this.http
+      .post('https://app.fpklima.pl/', this.formData)
+      .subscribe(
+        (response) => {
+          console.log('File uploaded successfully:', response);
+          this.sendingEmail = false;
+          this.clearDataAfterEmailSend();
+          this.emailSended = true;
+        },
+        (error) => {
+          console.error('Error uploading file:', error);
+          this.sendingEmail = false;
+        }
+      );
+
   }
   private checkValidatorsForEmailForm() {
     if (this.emailForm.valid) {
       this.emailFormErrorDescription = '';
-      return false;
+      return true;
     }
     if (this.emailForm.get('email')?.errors) {
       this.emailFormErrorDescription = 'Proszę podać prawdiłowy adres email';
@@ -69,28 +75,35 @@ export class KontaktComponent {
   }
   onFileSelected(event: any) {
     const files: FileList = event.target.files;
+    let fileSize = 0;
     for(let fileNumber=0;fileNumber<files.length;fileNumber++){
-        console.log(files[fileNumber].name);
        this.formData.append(files[fileNumber].name, files[fileNumber]);
+       fileSize+=files[fileNumber].size;
+    }
+    this.fileListInputElement = event.target  as HTMLInputElement;
+    if(this.maxFilesize<fileSize){
+      this.emailFormErrorDescription ='Rozmiar załączonych plików jest zbyt duży (max 20 MB)';
+      this.clearFormData();
+    }else{
+      this.emailFormErrorDescription ='';
     }
   }
-
-// convertFormGroupToFormData(formGroup: FormGroup): FormData {
-//   const formData = new FormData();
-
-//   Object.keys(formGroup.controls).forEach(key => {
-//     const control = formGroup.get(key);
-
-//     if (control instanceof FileList) {
-//       const fileList: FileList = control.value;
-//       for (let i = 0; i < fileList.length; i++) {
-//         formData.append(key, fileList[i]);
-//       }
-//     } else if (control instanceof File) {
-//       formData.append(key, control.value);
-//     }
-//   });
-//   return formData;
-// }
-
+  mergeAllFormDataToOneForm(){
+    const keys = Object.keys(this.emailForm.value);
+    for(let i=0;i<keys.length;i++){
+      this.formData.append(keys[i], this.emailForm.value[keys[i]]);
+    }
+    return this;
+  }
+  clearDataAfterEmailSend(){
+    this.emailForm.reset();
+    this.clearFormData();
+  }
+  clearFormData(){
+    if(this.fileListInputElement){
+    this.formData = new FormData();
+    this.fileListInputElement.files = null;
+    this.fileListInputElement.value = '';
+    }
+  }
 }

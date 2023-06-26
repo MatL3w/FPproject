@@ -43,15 +43,29 @@ text-shadow: 0 0 2px #009bd6;
 font-size: 20px;
 }
 .form-button-send{
-  border: none;
+border-radius: 10px;
+border: none;
 background-color: #009bd6;
 color: white;
 text-shadow: 0 0 2px #009bd6;
-font-size: 40px;
+font-size: 30px;
 }
 .email-form-error{
 border: none;
 color: red;
 text-shadow: 0 0 2px red;
+font-size: 20px;
+}
+.spinner{
+  animation: spin 1.5s infinite linear;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.email-form-sended{
+border: none;
+color: green;
+text-shadow: 0 0 2px green;
 font-size: 20px;
 }

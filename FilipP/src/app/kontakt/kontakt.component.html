@@ -25,10 +25,16 @@
 <div class="container ">
   <p class="text-center" id="kontakt-formularz">FORMULARZ KONTAKTOWY</p>
 </div>
+<div *ngIf="sendingEmail" class="container text-center spinner">
+  <img src="../../assets/spinner.png" alt="">
+</div>
 <div class="container ">
   <p *ngIf="emailFormErrorDescription" class="text-center email-form-error">{{ emailFormErrorDescription }}</p>
 </div>
-    <form class="animation" [formGroup]='emailForm' (ngSubmit)="submitForm()">
+<div class="container ">
+  <p *ngIf="emailSended" class="text-center email-form-sended">Wiadomość wysłana! Postaramy się odpowiedzieć jak najszybciej!</p>
+</div>
+    <form [style.display]="sendingEmail ? 'none' : 'block' " class="animation" [formGroup]='emailForm' (ngSubmit)="submitForm()">
       <div class="container">
         <div class="row d-flex justify-content-center align-items-center ">
           <div class = 'col-md-5 text-end m-4'>
@@ -49,7 +55,8 @@
         <div class="row d-flex justify-content-center align-items-center">
           <div class = 'col d-flex justify-content-center align-items-center m-4 '>
             <label for="files">ZAŁĄCZNIK:</label>
-            <input type="file"  name='files' formControlName="files" multiple  (change)="onFileSelected($event)" />
+            <input type="file"  name='files' multiple  accept=".jpg, .png, .pdf" (change)="onFileSelected($event)" />
+            <p></p>
           </div>
         </div>
         <div class="row d-flex justify-content-center align-items-center">
