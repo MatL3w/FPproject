@@ -36,7 +36,7 @@ export class KontaktComponent {
     if (!this.checkValidatorsForEmailForm())return;
     this.sendingEmail = true;
     this.http
-      .post('https://app.fpklima.pl/', this.formData)
+      .post('http://localhost:3000', this.formData)
       .subscribe(
         (response) => {
           console.log('File uploaded successfully:', response);
@@ -47,6 +47,7 @@ export class KontaktComponent {
         (error) => {
           console.error('Error uploading file:', error);
           this.sendingEmail = false;
+          this.clearDataAfterEmailSend();
         }
       );
       return false;
