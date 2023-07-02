@@ -36,21 +36,19 @@ export class KontaktComponent {
     this.mergeAllFormDataToOneForm();
     if (!this.checkValidatorsForEmailForm())return;
     this.sendingEmail = true;
-    this.http
-      .post('https://app.fpklima.pl/', this.formData)
-      .subscribe(
-        (response) => {
-          console.log('File uploaded successfully:', response);
-          this.sendingEmail = false;
-          this.clearDataAfterEmailSend();
-          this.emailSended = true;
-        },
-        (error) => {
-          console.error('Error uploading file:', error);
-          this.sendingEmail = false;
-          this.clearDataAfterEmailSend();
-        }
-      );
+    this.http.post('https://app.fpklima.pl/', this.formData).subscribe(
+      (response) => {
+        console.log('File uploaded successfully:', response);
+        this.sendingEmail = false;
+        this.clearDataAfterEmailSend();
+        this.emailSended = true;
+      },
+      (error) => {
+        console.error('Error uploading file:', error);
+        this.sendingEmail = false;
+        this.clearDataAfterEmailSend();
+      }
+    );
       return false;
   }
   private checkValidatorsForEmailForm() {
