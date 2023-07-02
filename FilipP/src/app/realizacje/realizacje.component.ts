@@ -45,6 +45,9 @@ export class RealizacjeComponent {
     '../../assets/realizacje/realizacje17.jpeg',
     '../../assets/realizacje/realizacje18.jpeg',
     '../../assets/realizacje/realizacje19.jpeg',
+    '../../assets/realizacje/realizacje20.jpeg',
+    '../../assets/realizacje/realizacje21.jpeg',
+    '../../assets/realizacje/realizacje22.jpeg',
   ];
   modalIsVisible: string = 'none';
 }
