@@ -32,11 +32,12 @@ export class KontaktComponent {
   ngOnDestroy() {
   }
   submitForm() {
+    this.emailSended = false;
     this.mergeAllFormDataToOneForm();
     if (!this.checkValidatorsForEmailForm())return;
     this.sendingEmail = true;
     this.http
-      .post('http://localhost:3000', this.formData)
+      .post('https://app.fpklima.pl/', this.formData)
       .subscribe(
         (response) => {
           console.log('File uploaded successfully:', response);
